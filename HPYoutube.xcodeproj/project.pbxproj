@@ -7,19 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		097A90F8177F6C3D00992F29 /* HPYoutubeElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 097A90F7177F6C3D00992F29 /* HPYoutubeElement.m */; };
+		097A90F9177F6C3D00992F29 /* HPYoutubeElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 097A90F7177F6C3D00992F29 /* HPYoutubeElement.m */; };
+		09B48D29177E3AE000B5BA10 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B48D28177E3AE000B5BA10 /* UIKit.framework */; };
+		09B48D2C177E3BEF00B5BA10 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B48D28177E3AE000B5BA10 /* UIKit.framework */; };
+		09B48D2F177EEBEC00B5BA10 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B48D2E177EEBEC00B5BA10 /* libPods.a */; };
 		09B5C547177A25DC005E95D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B5C546177A25DC005E95D0 /* Foundation.framework */; };
-		09B5C54C177A25DC005E95D0 /* HPYoutube.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 09B5C54B177A25DC005E95D0 /* HPYoutube.h */; };
-		09B5C54E177A25DC005E95D0 /* HPYoutube.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B5C54D177A25DC005E95D0 /* HPYoutube.m */; };
 		09B5C555177A25DC005E95D0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B5C554177A25DC005E95D0 /* XCTest.framework */; };
 		09B5C556177A25DC005E95D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B5C546177A25DC005E95D0 /* Foundation.framework */; };
-		09B5C558177A25DC005E95D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B5C557177A25DC005E95D0 /* UIKit.framework */; };
-		09B5C55B177A25DC005E95D0 /* libHPYoutube.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B5C543177A25DC005E95D0 /* libHPYoutube.a */; };
 		09B5C561177A25DC005E95D0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 09B5C55F177A25DC005E95D0 /* InfoPlist.strings */; };
 		09B5C563177A25DC005E95D0 /* HPYoutubeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B5C562177A25DC005E95D0 /* HPYoutubeTests.m */; };
+		09B5C56E177A278B005E95D0 /* HPHTTPClientYoutube.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B5C56D177A278B005E95D0 /* HPHTTPClientYoutube.m */; };
+		09B5C56F177A278B005E95D0 /* HPHTTPClientYoutube.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B5C56D177A278B005E95D0 /* HPHTTPClientYoutube.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		09B5C559177A25DC005E95D0 /* PBXContainerItemProxy */ = {
+		09B48D30177EEC9E00B5BA10 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 09B5C53B177A25DC005E95D0 /* Project object */;
 			proxyType = 1;
@@ -35,24 +38,29 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				09B5C54C177A25DC005E95D0 /* HPYoutube.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		097A90F6177F6C3D00992F29 /* HPYoutubeElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPYoutubeElement.h; sourceTree = "<group>"; };
+		097A90F7177F6C3D00992F29 /* HPYoutubeElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPYoutubeElement.m; sourceTree = "<group>"; };
+		09B48D28177E3AE000B5BA10 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		09B48D2A177E3B4300B5BA10 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		09B48D2E177EEBEC00B5BA10 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		09B5C543177A25DC005E95D0 /* libHPYoutube.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHPYoutube.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		09B5C546177A25DC005E95D0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		09B5C54A177A25DC005E95D0 /* HPYoutube-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HPYoutube-Prefix.pch"; sourceTree = "<group>"; };
-		09B5C54B177A25DC005E95D0 /* HPYoutube.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HPYoutube.h; sourceTree = "<group>"; };
-		09B5C54D177A25DC005E95D0 /* HPYoutube.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HPYoutube.m; sourceTree = "<group>"; };
 		09B5C553177A25DC005E95D0 /* HPYoutubeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HPYoutubeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		09B5C554177A25DC005E95D0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		09B5C557177A25DC005E95D0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		09B5C55E177A25DC005E95D0 /* HPYoutubeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HPYoutubeTests-Info.plist"; sourceTree = "<group>"; };
 		09B5C560177A25DC005E95D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		09B5C562177A25DC005E95D0 /* HPYoutubeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HPYoutubeTests.m; sourceTree = "<group>"; };
+		09B5C56C177A278B005E95D0 /* HPHTTPClientYoutube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPHTTPClientYoutube.h; sourceTree = "<group>"; };
+		09B5C56D177A278B005E95D0 /* HPHTTPClientYoutube.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPHTTPClientYoutube.m; sourceTree = "<group>"; };
+		2097C158A2674D6181E53F0A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7DBB76ECEE44308A479FCA1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09B48D29177E3AE000B5BA10 /* UIKit.framework in Frameworks */,
 				09B5C547177A25DC005E95D0 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -68,10 +77,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09B5C555177A25DC005E95D0 /* XCTest.framework in Frameworks */,
-				09B5C55B177A25DC005E95D0 /* libHPYoutube.a in Frameworks */,
-				09B5C558177A25DC005E95D0 /* UIKit.framework in Frameworks */,
+				09B48D2C177E3BEF00B5BA10 /* UIKit.framework in Frameworks */,
 				09B5C556177A25DC005E95D0 /* Foundation.framework in Frameworks */,
+				09B5C555177A25DC005E95D0 /* XCTest.framework in Frameworks */,
+				09B48D2F177EEBEC00B5BA10 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +94,7 @@
 				09B5C55C177A25DC005E95D0 /* HPYoutubeTests */,
 				09B5C545177A25DC005E95D0 /* Frameworks */,
 				09B5C544177A25DC005E95D0 /* Products */,
+				A7DBB76ECEE44308A479FCA1 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,9 +110,12 @@
 		09B5C545177A25DC005E95D0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				09B48D2E177EEBEC00B5BA10 /* libPods.a */,
+				09B48D2A177E3B4300B5BA10 /* libPods.a */,
+				09B48D28177E3AE000B5BA10 /* UIKit.framework */,
 				09B5C546177A25DC005E95D0 /* Foundation.framework */,
 				09B5C554177A25DC005E95D0 /* XCTest.framework */,
-				09B5C557177A25DC005E95D0 /* UIKit.framework */,
+				2097C158A2674D6181E53F0A /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -110,8 +123,10 @@
 		09B5C548177A25DC005E95D0 /* HPYoutube */ = {
 			isa = PBXGroup;
 			children = (
-				09B5C54B177A25DC005E95D0 /* HPYoutube.h */,
-				09B5C54D177A25DC005E95D0 /* HPYoutube.m */,
+				09B5C56C177A278B005E95D0 /* HPHTTPClientYoutube.h */,
+				09B5C56D177A278B005E95D0 /* HPHTTPClientYoutube.m */,
+				097A90F6177F6C3D00992F29 /* HPYoutubeElement.h */,
+				097A90F7177F6C3D00992F29 /* HPYoutubeElement.m */,
 				09B5C549177A25DC005E95D0 /* Supporting Files */,
 			);
 			path = HPYoutube;
@@ -150,9 +165,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 09B5C566177A25DC005E95D0 /* Build configuration list for PBXNativeTarget "HPYoutube" */;
 			buildPhases = (
+				983896F0836F4AAE8E476E43 /* Check Pods Manifest.lock */,
 				09B5C53F177A25DC005E95D0 /* Sources */,
 				09B5C540177A25DC005E95D0 /* Frameworks */,
 				09B5C541177A25DC005E95D0 /* CopyFiles */,
+				03A142D3CCFA449F97AC7021 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -174,7 +191,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				09B5C55A177A25DC005E95D0 /* PBXTargetDependency */,
+				09B48D31177EEC9E00B5BA10 /* PBXTargetDependency */,
 			);
 			name = HPYoutubeTests;
 			productName = HPYoutubeTests;
@@ -219,12 +236,44 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		03A142D3CCFA449F97AC7021 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		983896F0836F4AAE8E476E43 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		09B5C53F177A25DC005E95D0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09B5C54E177A25DC005E95D0 /* HPYoutube.m in Sources */,
+				097A90F8177F6C3D00992F29 /* HPYoutubeElement.m in Sources */,
+				09B5C56E177A278B005E95D0 /* HPHTTPClientYoutube.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,16 +282,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				09B5C563177A25DC005E95D0 /* HPYoutubeTests.m in Sources */,
+				09B5C56F177A278B005E95D0 /* HPHTTPClientYoutube.m in Sources */,
+				097A90F9177F6C3D00992F29 /* HPYoutubeElement.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		09B5C55A177A25DC005E95D0 /* PBXTargetDependency */ = {
+		09B48D31177EEC9E00B5BA10 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 09B5C542177A25DC005E95D0 /* HPYoutube */;
-			targetProxy = 09B5C559177A25DC005E95D0 /* PBXContainerItemProxy */;
+			targetProxy = 09B48D30177EEC9E00B5BA10 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -288,7 +339,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -318,7 +369,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -326,7 +377,9 @@
 		};
 		09B5C567177A25DC005E95D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7DBB76ECEE44308A479FCA1 /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Herve Peroteau (V79PQ7H77F)";
 				DSTROOT = /tmp/HPYoutube.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HPYoutube/HPYoutube-Prefix.pch";
@@ -338,7 +391,9 @@
 		};
 		09B5C568177A25DC005E95D0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7DBB76ECEE44308A479FCA1 /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Herve Peroteau (V79PQ7H77F)";
 				DSTROOT = /tmp/HPYoutube.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HPYoutube/HPYoutube-Prefix.pch";
@@ -350,7 +405,9 @@
 		};
 		09B5C56A177A25DC005E95D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7DBB76ECEE44308A479FCA1 /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Herve Peroteau (V79PQ7H77F)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -362,6 +419,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = "${PODS_HEADERS_SEARCH_PATHS}";
+				"HEADER_SEARCH_PATHS[arch=*]" = "${PODS_HEADERS_SEARCH_PATHS}";
 				INFOPLIST_FILE = "HPYoutubeTests/HPYoutubeTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
@@ -370,7 +429,9 @@
 		};
 		09B5C56B177A25DC005E95D0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7DBB76ECEE44308A479FCA1 /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Herve Peroteau (V79PQ7H77F)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -378,6 +439,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HPYoutube/HPYoutube-Prefix.pch";
+				HEADER_SEARCH_PATHS = "${PODS_HEADERS_SEARCH_PATHS}";
 				INFOPLIST_FILE = "HPYoutubeTests/HPYoutubeTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
@@ -403,6 +465,7 @@
 				09B5C568177A25DC005E95D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		09B5C569177A25DC005E95D0 /* Build configuration list for PBXNativeTarget "HPYoutubeTests" */ = {
 			isa = XCConfigurationList;
@@ -411,6 +474,7 @@
 				09B5C56B177A25DC005E95D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
