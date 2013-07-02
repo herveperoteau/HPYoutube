@@ -44,7 +44,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		09415D93178358D100881D40 /* HPNavController.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = HPNavController.podspec; sourceTree = "<group>"; };
+		09415D93178358D100881D40 /* HPYoutube.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = HPYoutube.podspec; sourceTree = "<group>"; };
 		097A90F6177F6C3D00992F29 /* HPYoutubeElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPYoutubeElement.h; sourceTree = "<group>"; };
 		097A90F7177F6C3D00992F29 /* HPYoutubeElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPYoutubeElement.m; sourceTree = "<group>"; };
 		09B48D28177E3AE000B5BA10 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -91,7 +91,7 @@
 		09B5C53A177A25DC005E95D0 = {
 			isa = PBXGroup;
 			children = (
-				09415D93178358D100881D40 /* HPNavController.podspec */,
+				09415D93178358D100881D40 /* HPYoutube.podspec */,
 				09B5C548177A25DC005E95D0 /* HPYoutube */,
 				09B5C55C177A25DC005E95D0 /* HPYoutubeTests */,
 				09B5C545177A25DC005E95D0 /* Frameworks */,
