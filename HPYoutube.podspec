@@ -6,8 +6,10 @@ Pod::Spec.new do |s|
   s.author   = { 'Herve Peroteau' => 'herve.peroteau@gmail.com' }
   s.description = 'API Youtube search'
   s.platform = :ios
+  s.ios.deployment_target = "7.0"
   s.source = { :git => "https://github.com/herveperoteau/HPYoutube.git"}
   s.source_files = 'HPYoutube'
   s.requires_arc = true
+  s.dependency 'AFNetworking'
 end
 
