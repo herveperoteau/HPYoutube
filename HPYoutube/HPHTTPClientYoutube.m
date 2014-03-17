@@ -11,113 +11,122 @@
 
 #import "HPHTTPClientYoutube.h"
 #import "HPYoutubeElement.h"
-#import "AFJSONRequestOperation.h"
+#import <AFNetworking.h>
 
 static NSString * const kYoutubeAPIBaseURLString = @"https://www.googleapis.com/youtube/v3";
 
 @implementation HPHTTPClientYoutube {
     
-    NSString *keyApi;
+    NSString *_apiKey;
 }
 
 -(id) initWithApiKey:(NSString *) apiKey {
     
     if ((self = [self initWithBaseURL:[NSURL URLWithString:kYoutubeAPIBaseURLString]])) {
         
-        keyApi = apiKey;
+        _apiKey = apiKey;
     }
     
     return self;
 }
 
-- (id)initWithBaseURL:(NSURL *)url {
+-(NSURLSessionDataTask *) checkServerSuccess:(SuccessTaskBlock)success
+                                     failure:(ErrorTaskBlock)failure {
+
+    NSAssert(_apiKey, @"keyApi is nil !!!");
     
-    self = [super initWithBaseURL:url];
-    
-    if (!self) {
-        return nil;
-    }
-    
-    [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
-    
-    // Accept HTTP Header; see http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.1
-	//[self setDefaultHeader:@"Accept" value:@"application/json"];
-    
-    return self;
+    NSURLSessionDataTask *task = [self GET:@"search"
+                                parameters:@{@"part":@"id", @"key" : _apiKey}
+                                   success:^(NSURLSessionDataTask *task, id responseObject) {
+                                       
+                                       if (success)
+                                           success(task, @"ok");
+                                   }
+                                   failure:^(NSURLSessionDataTask *task, NSError *error) {
+
+                                       if (failure)
+                                           failure(task, error);
+                                   }];
+
+    return task;
 }
 
--(NSOperation *) checkServerSuccess:(SuccessOperationBlock) success
-                            failure:(ErrorOperationBlock) failure {
-
-    NSAssert(keyApi, @"keyApi is nil !!!");
-
-    NSMutableURLRequest *request = [self requestWithMethod:@"GET"
-                                                         path:@"search"
-                                                   parameters:@{@"part":@"id", @"key" : keyApi}];
-
-    AFJSONRequestOperation *operation = [[AFJSONRequestOperation alloc] initWithRequest:request];
-
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        if (success) {
-            success (operation, @"ok");
-        }
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-        if (failure) {
-            failure (operation, error);
-        }
-    }];
+-(NSURLSessionDataTask *) searchVideos:(NSArray *) keywords
+                             maxResult:(NSInteger) maxResult
+                               success:(SuccessTaskBlock) success
+                               failure:(ErrorTaskBlock) failure {
     
-    [operation start];
+    NSAssert(_apiKey, @"keyApi is nil !!!");
+    
+    NSURLSessionDataTask *task = [self GET:@"search"
+                                parameters:@{@"part":@"snippet",
+                                             @"type": @"video",
+                                             @"q":[keywords componentsJoinedByString:@"+"],
+                                             @"maxResults": [NSString stringWithFormat:@"%d", maxResult],
+                                             @"key" : _apiKey}
+                                   success:^(NSURLSessionDataTask *task, id responseObject) {
+                                       
+                                       NSDictionary *json = (NSDictionary *) responseObject;
+                                       
+                                       NSArray *items = [json objectForKey:@"items"];
+                                       
+                                       NSArray *result = [self parseJSONToHPYoutubeElement:items];
 
-    return operation;
+                                       if (success)
+                                           success(task, result);
+                                   }
+                                   failure:^(NSURLSessionDataTask *task, NSError *error) {
+                                       
+                                       if (failure)
+                                           failure(task, error);
+                                   }];
+    
+    return task;
 }
 
--(NSOperation *) searchVideos:(NSArray *) keywords
-                    maxResult:(NSInteger) maxResult
-                      success:(SuccessOperationBlock) success
-                      failure:(ErrorOperationBlock) failure {
-
-    NSAssert(keyApi, @"keyApi is nil !!!");
-    NSAssert(maxResult>0 && maxResult<=50, @"maxResult must be > 0 and <= 50");
-    
-    NSMutableURLRequest *request = [self requestWithMethod:@"GET"
-                                                      path:@"search"
-                                                parameters:@{@"part":@"snippet",
-                                                             @"type": @"video",
-                                                             @"q":[keywords componentsJoinedByString:@"+"],
-                                                             @"maxResults": [NSString stringWithFormat:@"%d", maxResult],
-                                                             @"key" : keyApi}];
-    
-    
-    AFJSONRequestOperation *operation = [[AFJSONRequestOperation alloc] initWithRequest:request];
-    
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        // transforme Dictionnary JSON en un tableau de HPYoutubeElement(s)
-        NSDictionary *json = (NSDictionary *) responseObject;
-        
-        NSArray *items = [json objectForKey:@"items"];
-        
-        NSArray *result = [self parseJSONToHPYoutubeElement:items];
-        
-        if (success) {
-            success (operation, result);
-        }
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-        if (failure) {
-            failure (operation, error);
-        }
-    }];
-    
-    [operation start];
-    
-    return operation;
-}
+//-(NSOperation *) searchVideos:(NSArray *) keywords
+//                    maxResult:(NSInteger) maxResult
+//                      success:(SuccessOperationBlock) success
+//                      failure:(ErrorOperationBlock) failure {
+//
+//    NSAssert(keyApi, @"keyApi is nil !!!");
+//    NSAssert(maxResult>0 && maxResult<=50, @"maxResult must be > 0 and <= 50");
+//    
+//    NSMutableURLRequest *request = [self requestWithMethod:@"GET"
+//                                                      path:@"search"
+//                                                parameters:@{@"part":@"snippet",
+//                                                             @"type": @"video",
+//                                                             @"q":[keywords componentsJoinedByString:@"+"],
+//                                                             @"maxResults": [NSString stringWithFormat:@"%d", maxResult],
+//                                                             @"key" : keyApi}];
+//    
+//    
+//    AFJSONRequestOperation *operation = [[AFJSONRequestOperation alloc] initWithRequest:request];
+//    
+//    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        
+//        // transforme Dictionnary JSON en un tableau de HPYoutubeElement(s)
+//        NSDictionary *json = (NSDictionary *) responseObject;
+//        
+//        NSArray *items = [json objectForKey:@"items"];
+//        
+//        NSArray *result = [self parseJSONToHPYoutubeElement:items];
+//        
+//        if (success) {
+//            success (operation, result);
+//        }
+//        
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        
+//        if (failure) {
+//            failure (operation, error);
+//        }
+//    }];
+//    
+//    [operation start];
+//    
+//    return operation;
+//}
 
 /**
  {

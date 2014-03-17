@@ -7,24 +7,24 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AFHTTPClient.h"
+#import <AFNetworking/AFHTTPSessionManager.h>
 
-typedef void (^SuccessOperationBlock) (NSOperation *operation, id responseObject);
-typedef void (^ErrorOperationBlock) (NSOperation *operation, NSError *error);
+typedef void (^SuccessTaskBlock)(NSURLSessionDataTask *task, id responseObject);
+typedef void (^ErrorTaskBlock)(NSURLSessionDataTask *task, NSError *error);
 
-@interface HPHTTPClientYoutube : AFHTTPClient
+@interface HPHTTPClientYoutube : AFHTTPSessionManager
 
 -(id) initWithApiKey:(NSString *) apiKey;
 
--(NSOperation *) checkServerSuccess:(SuccessOperationBlock)success
-                            failure:(ErrorOperationBlock)failure;
+-(NSURLSessionDataTask *) checkServerSuccess:(SuccessTaskBlock)success
+                                     failure:(ErrorTaskBlock)failure;
 
 /**
     Quand success, l'objet responseObject est un tableau d'element de type HPYoutubeElement
  */
--(NSOperation *) searchVideos:(NSArray *) keywords
-                    maxResult:(NSInteger) maxResult
-                      success:(SuccessOperationBlock) success
-                      failure:(ErrorOperationBlock) failure;
+-(NSURLSessionDataTask *) searchVideos:(NSArray *) keywords
+                             maxResult:(NSInteger) maxResult
+                               success:(SuccessTaskBlock) success
+                               failure:(ErrorTaskBlock) failure;
 
 @end

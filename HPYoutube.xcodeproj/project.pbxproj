@@ -19,6 +19,7 @@
 		09B5C563177A25DC005E95D0 /* HPYoutubeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B5C562177A25DC005E95D0 /* HPYoutubeTests.m */; };
 		09B5C56E177A278B005E95D0 /* HPHTTPClientYoutube.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B5C56D177A278B005E95D0 /* HPHTTPClientYoutube.m */; };
 		09B5C56F177A278B005E95D0 /* HPHTTPClientYoutube.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B5C56D177A278B005E95D0 /* HPHTTPClientYoutube.m */; };
+		C26125289E7B40C1B408782C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B48D2E177EEBEC00B5BA10 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 			files = (
 				09B48D29177E3AE000B5BA10 /* UIKit.framework in Frameworks */,
 				09B5C547177A25DC005E95D0 /* Foundation.framework in Frameworks */,
+				C26125289E7B40C1B408782C /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +254,7 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		983896F0836F4AAE8E476E43 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -388,6 +391,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -402,6 +406,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				VALID_ARCHS = "armv7 armv7s";
 			};
 			name = Release;
 		};
@@ -413,7 +418,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
-					"$(SYSTEM_APPS_DIR)/Xcode5-DP.app/Contents/Developer/Library/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HPYoutube/HPYoutube-Prefix.pch";
@@ -425,6 +429,7 @@
 				"HEADER_SEARCH_PATHS[arch=*]" = "${PODS_HEADERS_SEARCH_PATHS}";
 				INFOPLIST_FILE = "HPYoutubeTests/HPYoutubeTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -437,13 +442,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
-					"$(SYSTEM_APPS_DIR)/Xcode5-DP.app/Contents/Developer/Library/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HPYoutube/HPYoutube-Prefix.pch";
 				HEADER_SEARCH_PATHS = "${PODS_HEADERS_SEARCH_PATHS}";
 				INFOPLIST_FILE = "HPYoutubeTests/HPYoutubeTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
