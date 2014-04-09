@@ -58,6 +58,8 @@ static NSString * const kYoutubeAPIBaseURLString = @"https://www.googleapis.com/
     
     NSAssert(_apiKey, @"keyApi is nil !!!");
     
+    NSLog(@"%@.searchVideos keywords=%@ maxResult=%d ...", self.class, keywords, maxResult);
+    
     NSURLSessionDataTask *task = [self GET:@"search"
                                 parameters:@{@"part":@"snippet",
                                              @"type": @"video",
@@ -66,19 +68,32 @@ static NSString * const kYoutubeAPIBaseURLString = @"https://www.googleapis.com/
                                              @"key" : _apiKey}
                                    success:^(NSURLSessionDataTask *task, id responseObject) {
                                        
+                                       NSLog(@"%@.searchVideos success ...", self.class);
+                                       
                                        NSDictionary *json = (NSDictionary *) responseObject;
                                        
                                        NSArray *items = [json objectForKey:@"items"];
                                        
                                        NSArray *result = [self parseJSONToHPYoutubeElement:items];
 
-                                       if (success)
-                                           success(task, result);
+                                       if (success) {
+                                           dispatch_async(dispatch_get_main_queue(), ^{
+                                               
+                                               NSLog(@"%@.searchVideos success handler ...", self.class);
+                                               success(task, result);
+                                           });
+                                       }
                                    }
                                    failure:^(NSURLSessionDataTask *task, NSError *error) {
                                        
-                                       if (failure)
-                                           failure(task, error);
+                                       NSLog(@"%@.searchVideos failure %@ ...", self.class, [error localizedDescription]);
+
+                                       if (failure) {
+                                           dispatch_async(dispatch_get_main_queue(), ^{
+                                               NSLog(@"%@.searchVideos failure handler ...", self.class);
+                                               failure(task, error);
+                                           });
+                                       }
                                    }];
     
     return task;
