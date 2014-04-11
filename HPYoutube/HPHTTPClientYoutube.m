@@ -58,13 +58,13 @@ static NSString * const kYoutubeAPIBaseURLString = @"https://www.googleapis.com/
     
     NSAssert(_apiKey, @"keyApi is nil !!!");
     
-    NSLog(@"%@.searchVideos keywords=%@ maxResult=%d ...", self.class, keywords, maxResult);
+    NSLog(@"%@.searchVideos keywords=%@ maxResult=%ld ...", self.class, keywords, (long)maxResult);
     
     NSURLSessionDataTask *task = [self GET:@"search"
                                 parameters:@{@"part":@"snippet",
                                              @"type": @"video",
                                              @"q":[keywords componentsJoinedByString:@"+"],
-                                             @"maxResults": [NSString stringWithFormat:@"%d", maxResult],
+                                             @"maxResults": [NSString stringWithFormat:@"%ld", (long)maxResult],
                                              @"key" : _apiKey}
                                    success:^(NSURLSessionDataTask *task, id responseObject) {
                                        
